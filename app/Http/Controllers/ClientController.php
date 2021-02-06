@@ -34,9 +34,7 @@ class ClientController extends Controller
         if ($clients->count() > 0) {
             return $clients;
         } else {
-            return response()->json([
-                'message' => 'Aucun client trouvé',
-            ], 200);
+            return response()->json([], 200);
         }
     }
 }
