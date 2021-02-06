@@ -12,7 +12,6 @@ class User extends Authenticatable
 
     /**
      * The attributes that are mass assignable.
-     * Les attributs attribuables en masse.
      *
      * @var array
      */
@@ -22,7 +21,6 @@ class User extends Authenticatable
 
     /**
      * The attributes that should be hidden for arrays.
-     * Les attributs qui doivent être masqués pour les tableaux.
      *
      * @var array
      */
@@ -32,16 +30,10 @@ class User extends Authenticatable
 
     /**
      * The attributes that should be cast to native types.
-     * Les attributs qui doivent être convertis en types natifs.
      *
      * @var array
      */
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
-
-    public function IsAdmin()
-    {
-        return $this->role === 'admin';
-    }
 }

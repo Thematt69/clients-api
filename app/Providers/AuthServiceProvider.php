@@ -4,10 +4,6 @@ namespace App\Providers;
 
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Gate;
-use App\Policies\LienPolicy;
-use App\Categorie;
-use App\Lien;
-use App\User;
 
 class AuthServiceProvider extends ServiceProvider
 {
@@ -18,7 +14,6 @@ class AuthServiceProvider extends ServiceProvider
      */
     protected $policies = [
         // 'App\Model' => 'App\Policies\ModelPolicy',
-        Lien::class => LienPolicy::class
     ];
 
     /**
@@ -30,10 +25,6 @@ class AuthServiceProvider extends ServiceProvider
     {
         $this->registerPolicies();
 
-
-        //utilisation Gate
-        /*Gate::define('update-lien', function (User $user, Lien $lien) {
-            return $user->id == $lien->idUsers;
-        });*/
+        //
     }
 }
