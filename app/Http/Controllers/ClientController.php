@@ -13,6 +13,7 @@ class ClientController extends Controller
      */
     public function index()
     {
+        dd('Client Controller Index');
         return Client::all();
     }
 
