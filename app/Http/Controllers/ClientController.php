@@ -13,7 +13,6 @@ class ClientController extends Controller
      */
     public function index()
     {
-        dd('Client Controller Index');
         return Client::all();
     }
 
@@ -25,7 +24,6 @@ class ClientController extends Controller
      */
     public function show(String $find)
     {
-        dd('Client Controller Show');
         $clients = Client::where('first', 'LIKE', '%' . $find . '%')
             ->orWhere('last', 'LIKE', '%' . $find . '%')
             ->orWhere('street', 'LIKE', '%' . $find . '%')
@@ -36,7 +34,6 @@ class ClientController extends Controller
         if ($clients->count() > 0) {
             return $clients;
         } else {
-            dd('Aucun résultat');
             return response()->json([], 200);
         }
     }
