@@ -30,10 +30,11 @@ class ClientController extends Controller
             ->orWhere('city', 'LIKE', '%' . $find . '%')
             ->orWhere('zip', 'LIKE', '%' . $find . '%')
             ->get();
-            
+
         if ($clients->count() > 0) {
             return $clients;
         } else {
+            dd('Aucun résultat');
             return response()->json([], 200);
         }
     }
