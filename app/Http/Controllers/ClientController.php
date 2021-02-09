@@ -24,6 +24,7 @@ class ClientController extends Controller
      */
     public function show(String $find)
     {
+        dd('Client Controller Show');
         $clients = Client::where('first', 'LIKE', '%' . $find . '%')
             ->orWhere('last', 'LIKE', '%' . $find . '%')
             ->orWhere('street', 'LIKE', '%' . $find . '%')
