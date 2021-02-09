@@ -17,3 +17,7 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+// Client
+Route::get('/client', 'ClientController@index');
+Route::get('/client/{find}', 'ClientController@show');
